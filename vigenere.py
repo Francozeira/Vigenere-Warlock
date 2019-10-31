@@ -1,7 +1,7 @@
 from pycipher import Vigenere
 from termcolor import colored
 
-# DECIPHERING VARIABLES
+# GENRAL VARIABLES
 toCipher = 'rickandmorty'
 ciphered = 'CCCVUNOGOCNY'
 key = 'lua'
@@ -31,10 +31,35 @@ key = repeat_to_length(key, toCipher)
 
 
 i = 0
+
+# FIRST TASK, JUST PRINTING RESULTS
+# while i < len(possibleKeys):
+#     print(
+#         'Verificação nº: ', i , '\n' ,
+#         'Chave: ', possibleKeys[i] , '\n' ,
+#         Vigenere(possibleKeys[i]).decipher(ciphered4) , '\n'
+#         '______________________________________________________________________________________________________________________________________________________________________________________','\n')
+#     i += 1
+
+# SECOND TASK, STORING DECIPHERS
+deciphered = []
 while i < len(possibleKeys):
-    print(
-        'Verificação nº: ', i , '\n' ,
-        'Chave: ', possibleKeys[i] , '\n' ,
-        Vigenere(possibleKeys[i]).decipher(ciphered4) , '\n'
-        '___________________________________________________________________________________________','\n')
+    deciphered.append(Vigenere(possibleKeys[i]).decipher(ciphered4))
     i += 1
+
+# SECOND TASK, PRINTING DECIPHERS
+# j = 0
+# while j < len(deciphered):
+#     print(
+#         'Verificação nº: ', j , '\n' ,
+#         'Chave: ', possibleKeys[j] , '\n' ,
+#         deciphered[j] , '\n'
+#         '______________________________________________________________________________________________________________________________________________________________________________________','\n')
+#     j += 1
+
+# THIRD TASK, SEARCHING FOR COMMON ENGLISH WORDS
+
+
+x = deciphered[2].find('DECRYPTION')
+y = deciphered[1].find('DECRYPTION')
+print(x,y)
