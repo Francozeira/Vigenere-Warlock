@@ -58,8 +58,21 @@ while i < len(possibleKeys):
 #     j += 1
 
 # THIRD TASK, SEARCHING FOR COMMON ENGLISH WORDS
+k = 0
+while k < len(deciphered):
+    hasWord = deciphered[k].find('DECRYPTION')
+    if hasWord != -1:
+        print(
+            'Verificação nº: ', k , '\n' ,
+            'Chave: ', possibleKeys[k] , '\n' ,
+            deciphered[k] , '\n'
+            '______________________________________________________________________________________________________________________________________________________________________________________','\n')
+    hasWord = None
+    k += 1
 
 
-x = deciphered[2].find('DECRYPTION')
-y = deciphered[1].find('DECRYPTION')
-print(x,y)
+
+
+# x = deciphered[2].find('DECRYPTION')
+# y = deciphered[1].find('DECRYPTION')
+# print(x,y)
