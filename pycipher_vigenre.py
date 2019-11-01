@@ -16,23 +16,23 @@ class Vigenere(Cipher):
     def __init__(self,key='fortification'):
         self.key = [k.upper() for k in key]
         
-    def encipher(self,string):
-        """Encipher string using Vigenere cipher according to initialised key. Punctuation and whitespace
-        are removed from the input.       
+    # def encipher(self,string):
+    #     """Encipher string using Vigenere cipher according to initialised key. Punctuation and whitespace
+    #     are removed from the input.       
 
-        Example::
+    #     Example::
 
-            ciphertext = Vigenere('HELLO').encipher(plaintext)     
+    #         ciphertext = Vigenere('HELLO').encipher(plaintext)     
 
-        :param string: The string to encipher.
-        :returns: The enciphered string.
-        """           
-        string = self.remove_punctuation(string)
-        ret = ''
-        for (i,c) in enumerate(string):
-            i = i%len(self.key)
-            ret += self.i2a(self.a2i(c) + self.a2i(self.key[i]))
-        return ret    
+    #     :param string: The string to encipher.
+    #     :returns: The enciphered string.
+    #     """           
+    #     string = self.remove_punctuation(string)
+    #     ret = ''
+    #     for (i,c) in enumerate(string):
+    #         i = i%len(self.key)
+    #         ret += self.i2a(self.a2i(c) + self.a2i(self.key[i]))
+    #     return ret    
 
     def decipher(self,string):
         """Decipher string using Vigenere cipher according to initialised key. Punctuation and whitespace
