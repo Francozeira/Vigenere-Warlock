@@ -1,5 +1,7 @@
-from pycipher import Vigenere
-from termcolor import colored
+#UNCOMMENT LINES BELOW TO IMPORT LIBRARIES
+
+# from pycipher import Vigenere
+# from termcolor import colored
 
 # GENRAL VARIABLES
 toCipher = 'rickandmorty'

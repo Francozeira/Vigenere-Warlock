@@ -2,6 +2,7 @@
 
 2- Para confirmar que foi descriptada, pode so mostrar no PC?
 
+3- Starting array of keys:
 [
 'sob',
 'fel',
