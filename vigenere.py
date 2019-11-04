@@ -46,140 +46,264 @@ teste3 = ''
 
 # VERIFICATION VARIABLES
 extendedPossibleKeys = [ 'ceu','dar','lua','ler','mar','sob', 'fel', 'vil', 'paz', 'mal', 'ver', 'ser', 'ego', 'ter', 'bem', 'vir', 'dar', 'bom', 'mas', 'rol', 'elo', 'era', 'tal', 'vis', 'ora', 'dia', 'luz', 'tez', 'com', 'ato', 'dor', 'eis', 'dou', 'hum', 'mim', 'ler', 'fiz', 'dom', 'pro', 'voo', 'sem', 'num', 'mau', 'uma', 'rua', 'sol', 'lei', 'que', 'ajo', 'foi', 'rio', 'pau', 'nau', 'seu', 'ode', 'eco', 'voz', 'fim', 'fez', 'nem', 'ido', 'meu', 'sim', 'vez', 'aia', 'via', 'boi', 'rei', 'jus', 'pai', 'sub', 'asa', 'jaz', 'som', 'tem', 'uns', 'azo', 'ali', 'for', 'rir', 'ata', 'agi', 'por', 'lhe', 'boa', 'uso', 'toa', 'sal', 'amo', 'ufa', 'sua', 'van', 'pra', 'cor', 'cia', 'cal', 'ovo', 'nos', 'par', 'tom', 'kit', 'fio', 'ira', 'mar', 'mui', 'giz', 'loa', 'lar', 'neo', 'mor', 'uau', 'ais', 'rim', 'uno', 'ano', 'pus', 'noz', 'top', 'gay', 'pez', 'mel', 'ele', 'cem', 'pal', 'aio', 'pia', 'cio', 'hem', 'oba', 'foz', 'tio', 'ela', 'uni', 'ida', 'ave', 'gia', 'jia', 'imo', 'tua', 'duo', 'uva', 'dum', 'teu', 'sic', 'cru', 'aro', 'vau', 'gol', 'dez', 'evo', 'ama', 'tia', 'exu', 'das', 'leu', 'deu', 'pio', 'aos', 'box', 'rap', 'dio', 'zen', 'nas', 'val', 'tai', 'oco', 'gaz', 'bio', 'ala', 'dei', 'mil', 'per', 'bis', 'tri', 'rum', 'opa', 'lia', 'aba', 'nua', 'sul', 'bar', 'oca', 'eia', 'pua', 'ado', 'ria', 'sus', 'bel', 'moa', 'oro', 'pan', 'ema', 'ipu', 'sai', 'sor', 'til', 'pum', 'vei', 'iso', 'spa', 'gel', 'min', 'qui', 'nom', 'mol', 'zoo', 'noa', 'aff', 'ero', 'ate', 'pop', 'ror', 'uru', 'itu', 'ola', 'zum', 'aca', 'lio', 'uai', 'ova', 'are', 'coa', 'eta', 'gir', 'gim', 'iru', 'bau', 'fot', 'upa', 'ono', 'ura', 'oma', 'xis', 'osa', 'sio', 'lis', 'bei', 'ulo', 'nha', 'mua', 'raz', 'feo', 'chi', 'var', 'mia', 'ati', 'obi', 'del', 'odo', 'rer', 'net', 'bit', 'ram', 'mio', 'gnu', 'ume', 'idi', 'IDH', 'tau', 'rau', 'ara', 'uca', 'pru', 'ose', 'aga', 'ade', 'dal', 'avo', 'ava', 'ota', 'ilu', 'afe', 'rep', 'omo', 'elu', 'qid', 'eva', 'ogo', 'reo', 'yin', 'cau', 'sen', 'Eva', 'abu', 'ago', 'emu', 'gio', 'psi', 'anu', 'apa', 'ril', 'fum', 'apo', 'ufo', 'gil', 'pul', 'far', 'heu', 'mir', 'out', 'ten', 'meo', 'axe', 'bos', 'uro', 'axi', 'aru', 'uga', 'ula', 'Gal', 'zio', 'adu', 'gau', 'sax', 'opo', 'hic', 'iva', 'Rem', 'ani', 'DDA', 'nit', 'dag', 'efi', 'ujo', 'rus', 'maz', 'uri', 'ren', 'nai', 'edu', 'iri', 'efe', 'oja', 'aal', 'tuo', 'ruz', 'nim', 'log', 'jau', 'bid', 'ppd', 'ozo', 'poa', 'ipo', 'joa', 'iba', 'upo', 'ovi', 'efo', 'udo', 'iei', 'uxi', 'ubi', 'oci', 'uja', 'rem', 'lev', 'bug', 'ici', 'ulu', 'uje', 'saa', 'udu', 'doa', 'poe', 'cha', 'mes', 'nao']
-commonWords = ['DECRYPTION','SECURITY','SAFETY','TECHNOLOGY','SYSTEM','PAPER','INFORMAT','PROCESS',]
+securityWords = ['DECRYPTION','SECURITY','SAFETY','TECHNOLOGY','SYSTEM','PAPER','INFORMAT','PROCESS', 'DIGITAL', 'CURRENCY', 'DEVELOPING']
+commonWords = ['THIS','OTHER','THE']
 
+
+receivedCipher = ciphered1
 
 # FIRST TASK, TRANSLATE AND STORE DECYPHERS
 i = 0
 deciphered = []
 while i < len(extendedPossibleKeys):
-    deciphered.append(Vigenere(extendedPossibleKeys[i]).decipher(ciphered4))
+    deciphered.append(Vigenere(extendedPossibleKeys[i]).decipher(receivedCipher))
     i += 1
 
-# SECOND TASK, PRINTING ALL DECIPHERS
-# j = 0
-# while j < len(deciphered):
-#     print(
-#         'Verificação nº: ', j , '\n' ,
-#         'Chave: ', extendedPossibleKeys[j] , '\n' ,
-#         deciphered[j] , '\n'
-#         '______________________________________________________________________________________________________________________________________________________________________________________','\n')
-#     j += 1
-
-# THIRD TASK, SEARCHING AND PRINTING DECIPHERS WITH COMMON ENGLISH WORDS
+# SECOND TASK, SEARCHING AND PRINTING DECIPHERS WITH SECURITY ENGLISH WORDS
 j = 0
+thisIsCorrect = None
 while j < len(deciphered):
     k = 0
     hasWord = -1
-    while (k < len(commonWords) and hasWord == -1):
-        hasWord = deciphered[j].find(commonWords[k])
+    while (k < len(securityWords) and hasWord == -1):
+        hasWord = deciphered[j].find(securityWords[k])
         if hasWord != -1:
+            thisIsCorrect = deciphered[j]
             print( Fore.GREEN + 
-                'Verificação nº: ', j , '\n' ,
+                '*** Verificação nº: ', j , '\n' ,
                 'Chave: ', extendedPossibleKeys[j] , '\n' ,
-                deciphered[j] , '\n' + Style.RESET_ALL +
+                thisIsCorrect , '\n' + Style.RESET_ALL +
                 '______________________________________________________________________________________________________________________________________________________________________________________','\n')
         k += 1
     j += 1
 
-# FOURTH TASK, VERIFICATION IF ANY CYPHER HAS TEH COMMON ENGLISH WORDS
-j = 0
-dictio = {}
-thisIsCorrect = 'init'
-while j < len(deciphered):
-    k = 0
-    hasWord = -1
-    while (k < len(commonWords) and hasWord == -1):
-        hasWord = deciphered[j].find(commonWords[k])
-        if hasWord != -1:
-            thisIsCorrect = deciphered[j]
-        k += 1
-    j += 1
+if thisIsCorrect != None:
 
-# FIFTH TASK, LOWERING ALL CASES AND ADDING SPACE ON CORRECT DECHIPERED 
-dicio = list(thisIsCorrect.lower())
-dicio = { i : dicio[i] for i in range(0, len(dicio) ) }
+    # THIRD TASK, IF  CORRECT MATCH IS FOUND, LOWER ALL CASES AND ADDING SPACE AND SPECIAL CHARACTERS ON CORRECT DECHIPERED 
+    dicio = list(thisIsCorrect.lower())
+    dicio = { i : dicio[i] for i in range(0, len(dicio) ) }
 
-def addSignals(index, char):
-    afterIndex = { i+1 : dicio[i] for i in range(i, len(dicio) ) }
-    dicio.update({i : char})
-    dicio.update(afterIndex)
-    return dicio
+    def addSignals(index, char):
+        afterIndex = { i+1 : dicio[i] for i in range(i, len(dicio) ) }
+        dicio.update({i : char})
+        dicio.update(afterIndex)
+        return dicio
 
-i = 0
-for c in ciphered4:
+    i = 0
+    for c in receivedCipher:
 
-    if i == 0:
-        dicio.update({i : dicio.get(i).upper()})
+        if i == 0:
+            dicio.update({i : dicio.get(i).upper()})
+                
+        if c == " ":
+            addSignals(i, " ")
+                
+        if c == ".":
+            addSignals(i, ".")
+            if dicio.get(i+1) != None:
+                dicio.update({i+1 : dicio.get(i+1).upper()})
+                        
+        if c == ",":
+            addSignals(i, ",")
+                                
+        if c == "!":
+            addSignals(i, "!")  
+
+        if c == "?":
+            addSignals(i, "?")  
+
+        if c == "@":
+            addSignals(i, "@")   
+
+        if c == "#":
+            addSignals(i, "#")  
+
+        if c == "$":
+            addSignals(i, "$")   
+
+        if c == "%":
+            addSignals(i, "%")  
             
-    if c == " ":
-        addSignals(i, " ")
+        if c == "&":
+            addSignals(i, "&")  
+
+        if c == "*":
+            addSignals(i, "*")   
+
+        if c == "-":
+            addSignals(i, "-")  
             
-    if c == ".":
-        addSignals(i, ".")
-        dicio.update({i+1 : dicio.get(i+1).upper()})
-                    
-    if c == ",":
-        addSignals(i, ",")
+        if c == "+":
+            addSignals(i, "+") 
             
-    if c == "(":
-        addSignals(i, "(")
+        if c == "_":
+            addSignals(i, "_")  
             
-    if c == ")":
-        addSignals(i, ")")
-                    
-    if c == "[":
-        addSignals(i, "[")
-            
-    if c == "]":
-        addSignals(i, "]")
-            
-    if c == "“":
-        addSignals(i, "“")
-    
-    if c == "”":
-        addSignals(i, "”")
-            
-    if c == "9":
-        addSignals(i, "9")
-                    
-    if c == "8":
-        addSignals(i, "8")
-                    
-    if c == "7":
-        addSignals(i, "7")
-                    
-    if c == "6":
-        addSignals(i, "6")
-                    
-    if c == "5":
-        addSignals(i, "5")
-                    
-    if c == "4":
-        addSignals(i, "4")
-                    
-    if c == "3":
-        addSignals(i, "3")
-                    
-    if c == "2":
-        addSignals(i, "2")
-                    
-    if c == "1":
-        addSignals(i, "1")
-                    
-    if c == "0":
-        addSignals(i, "0")
+        if c == "+":
+            addSignals(i, "+") 
+
+        if c == "[":
+            addSignals(i, "[")
+                
+        if c == "(":
+            addSignals(i, "(")
+                
+        if c == ")":
+            addSignals(i, ")")
+                        
+        if c == "[":
+            addSignals(i, "[")
+                
+        if c == "]":
+            addSignals(i, "]")
+                        
+        if c == "{":
+            addSignals(i, "{")
+                
+        if c == "}":
+            addSignals(i, "}")
+                        
+        if (c == "/"):
+            addSignals(i, "/")
+                                
+        if (c == "\\"):
+            addSignals(i, "\\")
+                
+        if c == "'":
+            addSignals(i, "'")
+                                            
+        if c == "’":
+            addSignals(i, "’")
+                
+        if c == "“":
+            addSignals(i, "“")
         
-    i += 1
+        if c == "”":
+            addSignals(i, "”")
+                
+        if c == "9":
+            addSignals(i, "9")
+                        
+        if c == "8":
+            addSignals(i, "8")
+                        
+        if c == "7":
+            addSignals(i, "7")
+                        
+        if c == "6":
+            addSignals(i, "6")
+                        
+        if c == "5":
+            addSignals(i, "5")
+                        
+        if c == "4":
+            addSignals(i, "4")
+                        
+        if c == "3":
+            addSignals(i, "3")
+                        
+        if c == "2":
+            addSignals(i, "2")
+                        
+        if c == "1":
+            addSignals(i, "1")
 
-ponctuadedAnswer = "".join(dicio.values())
+        if c == "0":
+            addSignals(i, "0")
+                        
+        if c == "ç":
+            addSignals(i, "ç")
+                                
+        if c == "ã":
+            addSignals(i, "ã")
+                                        
+        if c == "á":
+            addSignals(i, "á")
+                                    
+        if c == "à":
+            addSignals(i, "à")
+                                    
+        if c == "ó":
+            addSignals(i, "ó")
+                                    
+        if c == "à":
+            addSignals(i, "à")
+                                    
+        if c == "õ":
+            addSignals(i, "õ")
+                                    
+        if c == "é":
+            addSignals(i, "é")
+                                    
+        if c == "è":
+            addSignals(i, "è")
+                                    
+        # if c == "0":
+        #     addSignals(i, "0")
+                                    
+        # if c == "0":
+        #     addSignals(i, "0")
+                                    
+        # if c == "0":
+        #     addSignals(i, "0")
+                                    
+        # if c == "0":
+        #     addSignals(i, "0")
+                                    
+        # if c == "0":
+        #     addSignals(i, "0")
+                                    
+        # if c == "0":
+        #     addSignals(i, "0")
+                                    
+        # if c == "0":
+        #     addSignals(i, "0")
+        
+        i += 1
 
-# SIXTH TASK, PRINTING AND WRITING IN EXTERNAL FILE THE CORRECT RESULT
-print(ponctuadedAnswer, '\n') 
-print("Comprimento da string encriptada: " , len(ciphered4))
-print("Comprimento da string final: " , len(ponctuadedAnswer))
+    ponctuatedAnswer = "".join(dicio.values())
+
+    # FOURTH TASK, PRINTING AND WRITING IN EXTERNAL FILE THE CORRECT RESULT
+    print(ponctuatedAnswer, '\n') 
+    if (len(receivedCipher) - len(ponctuatedAnswer) != 0):
+            print("Comprimento da string encriptada: " , Fore.YELLOW, len(receivedCipher) , Style.RESET_ALL)
+            print("Comprimento da string final: " , Fore.YELLOW, len(ponctuatedAnswer) , Style.RESET_ALL)
+    else:
+        print("Comprimento da string encriptada: " , Fore.GREEN, len(receivedCipher) , Style.RESET_ALL)
+        print("Comprimento da string final: " , Fore.GREEN, len(ponctuatedAnswer) , Style.RESET_ALL)
 
 
-# CREATING FILE
-# file = open("choupana.txt","w")
-# 
+    # FIFTH TASK, CREATING EXTERNAL FILE
+    # file = open("decipheredAnswer.docx","w")
+    # 
+
+
+# SIXTH TASK, SEARCHING AND PRINTING DECIPHERS WITH COMMON ENGLISH WORDS
+if thisIsCorrect == None:
+    j = 0
+    while j < len(deciphered):
+        k = 0
+        hasWord = -1
+        while (k < len(commonWords) and hasWord == -1):
+            hasWord = deciphered[j].find(commonWords[k])
+            if hasWord != -1:
+                thisIsCorrect = deciphered[j]
+                print( Fore.YELLOW + 
+                    '** Verificação nº: ', j , '\n' ,
+                    'Chave: ', extendedPossibleKeys[j] , '\n' ,
+                    thisIsCorrect , '\n' + Style.RESET_ALL +
+                    '______________________________________________________________________________________________________________________________________________________________________________________','\n')
+            k += 1
+        j += 1
+
+
+# SEVENTH TASK, IF NO CORRECT MATCH IS FOUND, PRINT ALL DECIPHERS
+if thisIsCorrect == None:
+    j = 0
+    while j < len(deciphered):
+        print(
+            'Verificação nº: ', j , '\n' ,
+            'Chave: ', extendedPossibleKeys[j] , '\n' ,
+            deciphered[j] , '\n'
+            '______________________________________________________________________________________________________________________________________________________________________________________','\n')
+        j += 1
