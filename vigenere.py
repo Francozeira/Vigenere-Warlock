@@ -35,6 +35,207 @@ class Vigenere(Cipher):
             ret += self.i2a(self.a2i(c) - self.a2i(self.key[i]))
         return ret  
 
+def formatString():    
+    # THIRD TASK, IF CORRECT MATCH IS FOUND, LOWER ALL CASES AND ADDING SPACE AND SPECIAL CHARACTERS ON CORRECT DECHIPERED 
+    dicio = list(nonPonctuatedAnswer.lower())
+    dicio = { i : dicio[i] for i in range(0, len(dicio) ) }
+
+    def addSignals(index, char):
+        afterIndex = { i+1 : dicio[i] for i in range(i, len(dicio) ) }
+        dicio.update({i : char})
+        dicio.update(afterIndex)
+        return dicio
+
+    i = 0
+    for c in receivedCipher:
+
+        if i == 0:
+            dicio.update({i : dicio.get(i).upper()})
+                
+        if c == " ":
+            addSignals(i, " ")
+                
+        if c == ".":
+            addSignals(i, ".")
+            if dicio.get(i+1) != None:
+                dicio.update({i+1 : dicio.get(i+1).upper()})
+                        
+        if c == ",":
+            addSignals(i, ",")
+                                
+        if c == "!":
+            addSignals(i, "!")  
+
+        if c == "?":
+            addSignals(i, "?")  
+
+        if c == "@":
+            addSignals(i, "@")   
+
+        if c == "#":
+            addSignals(i, "#")  
+
+        if c == "$":
+            addSignals(i, "$")   
+
+        if c == "%":
+            addSignals(i, "%")  
+            
+        if c == "&":
+            addSignals(i, "&")  
+
+        if c == "*":
+            addSignals(i, "*")   
+
+        if c == "-":
+            addSignals(i, "-")  
+            
+        if c == "+":
+            addSignals(i, "+") 
+            
+        if c == "_":
+            addSignals(i, "_")  
+            
+        if c == "+":
+            addSignals(i, "+") 
+
+        if c == "[":
+            addSignals(i, "[")
+                
+        if c == "(":
+            addSignals(i, "(")
+                
+        if c == ")":
+            addSignals(i, ")")
+                        
+        if c == "[":
+            addSignals(i, "[")
+                
+        if c == "]":
+            addSignals(i, "]")
+                        
+        if c == "{":
+            addSignals(i, "{")
+                
+        if c == "}":
+            addSignals(i, "}")
+                        
+        if (c == "/"):
+            addSignals(i, "/")
+                                
+        if (c == "\\"):
+            addSignals(i, "\\")
+                
+        if c == "'":
+            addSignals(i, "'")
+                                            
+        if c == "’":
+            addSignals(i, "’")
+                
+        if c == "“":
+            addSignals(i, "“")
+        
+        if c == "”":
+            addSignals(i, "”")
+                
+        if c == "9":
+            addSignals(i, "9")
+                        
+        if c == "8":
+            addSignals(i, "8")
+                        
+        if c == "7":
+            addSignals(i, "7")
+                        
+        if c == "6":
+            addSignals(i, "6")
+                        
+        if c == "5":
+            addSignals(i, "5")
+                        
+        if c == "4":
+            addSignals(i, "4")
+                        
+        if c == "3":
+            addSignals(i, "3")
+                        
+        if c == "2":
+            addSignals(i, "2")
+                        
+        if c == "1":
+            addSignals(i, "1")
+
+        if c == "0":
+            addSignals(i, "0")
+                        
+        if c == "ç":
+            addSignals(i, "ç")
+                                
+        if c == "ã":
+            addSignals(i, "ã")
+                                        
+        if c == "á":
+            addSignals(i, "á")
+                                    
+        if c == "à":
+            addSignals(i, "à")
+                                    
+        if c == "ó":
+            addSignals(i, "ó")
+                                    
+        if c == "à":
+            addSignals(i, "à")
+                                    
+        if c == "õ":
+            addSignals(i, "õ")
+                                    
+        if c == "é":
+            addSignals(i, "é")
+                                    
+        if c == "è":
+            addSignals(i, "è")
+                                    
+        # if c == "0":
+        #     addSignals(i, "0")
+                                    
+        # if c == "0":
+        #     addSignals(i, "0")
+                                    
+        # if c == "0":
+        #     addSignals(i, "0")
+                                    
+        # if c == "0":
+        #     addSignals(i, "0")
+                                    
+        # if c == "0":
+        #     addSignals(i, "0")
+                                    
+        # if c == "0":
+        #     addSignals(i, "0")
+                                    
+        # if c == "0":
+        #     addSignals(i, "0")
+        
+        i += 1
+
+    ponctuatedAnswer = "".join(dicio.values())
+
+    # FOURTH TASK, PRINTING AND WRITING IN EXTERNAL FILE THE CORRECT RESULT
+    print('\n', ponctuatedAnswer, '\n') 
+    if (len(receivedCipher) - len(ponctuatedAnswer) != 0):
+            print("Comprimento da string encriptada: " , Fore.YELLOW, len(receivedCipher) , Style.RESET_ALL)
+            print("Comprimento da string final: " , Fore.YELLOW, len(ponctuatedAnswer) , Style.RESET_ALL)
+    else:
+        print("Comprimento da string encriptada: " , Fore.GREEN, len(receivedCipher) , Style.RESET_ALL)
+        print("Comprimento da string final: " , Fore.GREEN, len(ponctuatedAnswer) , Style.RESET_ALL)
+
+
+    # FIFTH TASK, CREATING EXTERNAL FILE
+    file = open("decipheredAnswer.txt","w")
+    file.write("Chave correta: " + keyFound + "\n")
+    file.write(ponctuatedAnswer)
+    file.close()
+
 # TEST VARIABLES
 ciphered1 = 'Vvv roggf ugdzehj vvv fwcgadcg icwjgr sa hyg wdrzvosevokkce qt kjs Stoqkzzcb ukuzvoc esivwwkqrvsj’ umjvsd (Dfrbwc’u DBK) oef hyg diqqvug fh wehciookknrvwfp cw khj eclthj. Vvv Dfrbwc’u DBK kru sjvosnwjjsu dm kjs Echzqbrn Weuhzvikg cw Kbwqfdchzqb Kgqypccqup  (“Kbjvwkwhf Potkcecz ug Hvebfncxko uc Wehciooçãf”, czjq yeqk sa wku ottceaa “ZVW”) rocei o tqbkglk qt gqzzvwtcz kwfdqwc czfpu nkhy c zfv cw efzvwtkgd. Vvv Hsugfrn Qfwbtkz fh hyg Prt Ojuctkokkce (“Eceuscjc Wgrvtoc fo Ftrvo rfu Ouxcxcrfu rf Dfruwc”) ooug sjrstkocnm ycfjj qikhzeg riozpgk vvv umjvsd. Vvrv kru rlg hf khj kbkgfvuh zp hyg rvhseus fp gfos tqfgqfrvwmg digffiokkjvu, zzms kjs vowjuwfp cw nonasiu WUu. Ocuc, zv vrf pvgb gnoepwei hf nolpqy khj qke fwxkhrn qvthzhwtchvu’ gpuhvo. Hyg qfptckqk ifvy we ooea otvwfpg, zpqcwrzpu tqbjvwkwhzqbrn oef cifwecfp nonuizvg, nkhyqik cbp xwjkpcg gfnikkce. Vvv roggf uggttwsgg kjs Stoqkz GMW jagkga’j kagnsdgbkchzqb gtctggj, cbu vvv oozp qfpqvrhj qt kjs kgqypccqup. Vvvp wk cbrnmjgg kjs cgurn ticavycim oef hyg qikhzeg ugzzxsigr lrce kh. Kjs gcdvt kru plkzu hffo o iggvcftj arfs nkhy kbkgfmksnu oef o jwfmgm zpelkfp cpfwh kjs dqrvng fh arpoxkbx fwxkhrn qvthzhwtchvu’ gpuhvog. Kjsigtfts, zv qfpqcwrvu hych sqhy vvv vstjbzeoc cbu vvv nsxcz ugprvs jjcn c gfewrn rzudlvs, njwtj vru hf ds rugvugvf tiqa kjs tqagtsygbjkce qt kjs kgqypccqup’u gfewrn ijg. Vvtsrhhvt, hyg zrey fh rzhtluwfp cw c uvpsicz lus kgqypccqup vc xwoicbkgs uchr kbkgftjoeisj qpmkcluzp fsccmj vvv liukqzcz jagkga zptftarvwqchzqb.'
 ciphered2 = 'Xn ztcmct gtazh, tpt cppoa qaatd kgyxioogaxwik plodrqihuh hike ajgotsbtd admm cee pnl tfnxcqtnb lagh tw sedtlwe smruzt iupgm tnkgyxiiwc tmrhvxqcts. Qc tpxs kdmujnqrabxov, le xgoxdsm p nml axerwpcp uoz xmive mccznpbxov qaatd wc cppobxc tdgqhtqr mies qc ozsez io uteb ihm geyjiztmmcta df bwe atccge qbaot tzpnauez. Xn bwe xgoxdsms iupgm tnkgyxiiwc skweut, av txbtrvpl atcztt sty wu 80-bqi avs ted cppobxc tdgqhtqr mies ige mbptdyms. Tpt ivxtqpl kdnlxtqdna uoz ihm qobw lwviaiik baxh azt dmgidtd chivv tpt efiezcat hekgeb zeg qy xgodxdqcg lxfntrmct etiowtive bd ata ibh bqis. Njrbwez, xn bwe xgoxdsms evrrgetqdn xgoktsa, tiowt lxfntrmct bnpmh on dpmgabxovh azt uatd bd evrrget bwe xxxmas wu av xmive icd ewikw ovt on ihmb wqal jt uatd ndr i eaziikjlig pqmet xs ltcqsel qy bwe wjtkdmm df bwe tdgqhtqr mie. Tw bast tpt cqehmg mwge zdbcht ivaqcsb png ptbpcs, ihm hekgeb zeg xs uddquims aniez tnkgyxiivv eirh jaokz on hifiemc pqmeth on ihm xmive. Bwe ztscata df atvmgat txxtrqbeviat, htiiiaiikpl icatnsqh avs kmn smcsqiidxtg ieais awoe ihii tpt pzdpwhel xmive mccznpbxov hcptmm erwkilts ic enuikxevi avs smruzt win fwg rmpl-bxmm xmive mccznpbxov pnl iricsuxsaxov.'
@@ -51,7 +252,7 @@ securityWords = ['DECRYPTION','SECURITY','SAFETY','TECHNOLOGY','SYSTEM','PAPER',
 commonWords = ['THIS','OTHER','THE', 'BOTH']
 
 
-receivedCipher = ciphered2
+receivedCipher = ciphered8
 
 # FIRST TASK, TRANSLATE AND STORE DECYPHERS
 i = 0
@@ -299,6 +500,11 @@ if thisIsCorrect == None:
             k += 1
         j += 1
 
+    keyFound =  input(" Insira a chave da descriptação correta : \n")   
+    nonPonctuatedAnswer =  input(" Insira a descriptação para formatar para o envio: \n")
+    if nonPonctuatedAnswer != '' and keyFound != '':
+        formatString()
+
 
 # SEVENTH TASK, IF NO CORRECT MATCH IS FOUND, PRINT ALL DECIPHERS
 if thisIsCorrect == None:
@@ -310,3 +516,8 @@ if thisIsCorrect == None:
             deciphered[j] , '\n'
             '______________________________________________________________________________________________________________________________________________________________________________________','\n')
         j += 1
+    
+    keyFound =  input(" Insira a chave da descriptação correta : \n")   
+    nonPonctuatedAnswer =  input(" Insira a descriptação para formatar para o envio: \n")
+    if nonPonctuatedAnswer != '' and keyFound != '':
+        formatString()
