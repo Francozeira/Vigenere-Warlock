@@ -252,7 +252,6 @@ allPossibleKeys = ['sob','fel','vil','paz','mal','ver','ser','ego','ter','bem','
 securityWords = ['DECRYPTION','SECURITY','SAFETY','TECHNOLOGY','SYSTEM','PAPER','INFORMAT','PROCESS', 'DIGITAL', 'CURRENCY', 'DEVELOPING','ENCRYPTION', 'ANALYSIS', 'RESULTS', 'SECURE', 'APPROACH']
 commonWords = ['THIS','OTHER','THE', 'BOTH']
 
-
 receivedCipher = ciphered1
 
 # TRANSLATE AND STORE DECYPHERS
