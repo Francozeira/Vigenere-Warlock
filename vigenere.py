@@ -31,13 +31,13 @@ class Vigenere(Cipher):
         string = self.remove_punctuation(string)
         ret = ''
         for (i,c) in enumerate(string):
-            i = i%len(self.key)
+            i = i % len(self.key)
             ret += self.i2a(self.a2i(c) - self.a2i(self.key[i]))
         return ret  
 
-def formatString():    
-    # THIRD TASK, IF CORRECT MATCH IS FOUND, LOWER ALL CASES AND ADDING SPACE AND SPECIAL CHARACTERS ON CORRECT DECHIPERED 
-    dicio = list(nonPonctuatedAnswer.lower())
+def formatString(stringToFormat):    
+    # IF CORRECT MATCH IS FOUND, LOWER ALL CASES AND ADDING SPACE AND SPECIAL CHARACTERS ON CORRECT DECHIPERED 
+    dicio = list(stringToFormat.lower())
     dicio = { i : dicio[i] for i in range(0, len(dicio) ) }
 
     def addSignals(index, char):
@@ -220,7 +220,7 @@ def formatString():
 
     ponctuatedAnswer = "".join(dicio.values())
 
-    # FOURTH TASK, PRINTING AND WRITING IN EXTERNAL FILE THE CORRECT RESULT
+    # PRINTING AND WRITING IN EXTERNAL FILE THE CORRECT RESULT
     print('\n', ponctuatedAnswer, '\n') 
     if (len(receivedCipher) - len(ponctuatedAnswer) != 0):
             print("Comprimento da string encriptada: " , Fore.YELLOW, len(receivedCipher) , Style.RESET_ALL)
@@ -230,7 +230,7 @@ def formatString():
         print("Comprimento da string final: " , Fore.GREEN, len(ponctuatedAnswer) , Style.RESET_ALL)
 
 
-    # FIFTH TASK, CREATING EXTERNAL FILE
+    # CREATING EXTERNAL FILE
     file = open("decipheredAnswer.txt","w")
     file.write("Chave correta: " + keyFound + "\n")
     file.write(ponctuatedAnswer)
@@ -248,20 +248,21 @@ ciphered8 = 'Flp ureqvloxtard nieiipz lzex ygxcuxtar lzh amvlemeuwx ur cgqtzeyfw
 
 # VERIFICATION VARIABLES
 extendedPossibleKeys = [ 'ceu','dar','lua','ler','mar','sob', 'fel', 'vil', 'paz', 'mal', 'ver', 'ser', 'ego', 'ter', 'bem', 'vir', 'dar', 'bom', 'mas', 'rol', 'elo', 'era', 'tal', 'vis', 'ora', 'dia', 'luz', 'tez', 'com', 'ato', 'dor', 'eis', 'dou', 'hum', 'mim', 'ler', 'fiz', 'dom', 'pro', 'voo', 'sem', 'num', 'mau', 'uma', 'rua', 'sol', 'lei', 'que', 'ajo', 'foi', 'rio', 'pau', 'nau', 'seu', 'ode', 'eco', 'voz', 'fim', 'fez', 'nem', 'ido', 'meu', 'sim', 'vez', 'aia', 'via', 'boi', 'rei', 'jus', 'pai', 'sub', 'asa', 'jaz', 'som', 'tem', 'uns', 'azo', 'ali', 'for', 'rir', 'ata', 'agi', 'por', 'lhe', 'boa', 'uso', 'toa', 'sal', 'amo', 'ufa', 'sua', 'van', 'pra', 'cor', 'cia', 'cal', 'ovo', 'nos', 'par', 'tom', 'kit', 'fio', 'ira', 'mar', 'mui', 'giz', 'loa', 'lar', 'neo', 'mor', 'uau', 'ais', 'rim', 'uno', 'ano', 'pus', 'noz', 'top', 'gay', 'pez', 'mel', 'ele', 'cem', 'pal', 'aio', 'pia', 'cio', 'hem', 'oba', 'foz', 'tio', 'ela', 'uni', 'ida', 'ave', 'gia', 'jia', 'imo', 'tua', 'duo', 'uva', 'dum', 'teu', 'sic', 'cru', 'aro', 'vau', 'gol', 'dez', 'evo', 'ama', 'tia', 'exu', 'das', 'leu', 'deu', 'pio', 'aos', 'box', 'rap', 'dio', 'zen', 'nas', 'val', 'tai', 'oco', 'gaz', 'bio', 'ala', 'dei', 'mil', 'per', 'bis', 'tri', 'rum', 'opa', 'lia', 'aba', 'nua', 'sul', 'bar', 'oca', 'eia', 'pua', 'ado', 'ria', 'sus', 'bel', 'moa', 'oro', 'pan', 'ema', 'ipu', 'sai', 'sor', 'til', 'pum', 'vei', 'iso', 'spa', 'gel', 'min', 'qui', 'nom', 'mol', 'zoo', 'noa', 'aff', 'ero', 'ate', 'pop', 'ror', 'uru', 'itu', 'ola', 'zum', 'aca', 'lio', 'uai', 'ova', 'are', 'coa', 'eta', 'gir', 'gim', 'iru', 'bau', 'fot', 'upa', 'ono', 'ura', 'oma', 'xis', 'osa', 'sio', 'lis', 'bei', 'ulo', 'nha', 'mua', 'raz', 'feo', 'chi', 'var', 'mia', 'ati', 'obi', 'del', 'odo', 'rer', 'net', 'bit', 'ram', 'mio', 'gnu', 'ume', 'idi', 'IDH', 'tau', 'rau', 'ara', 'uca', 'pru', 'ose', 'aga', 'ade', 'dal', 'avo', 'ava', 'ota', 'ilu', 'afe', 'rep', 'omo', 'elu', 'qid', 'eva', 'ogo', 'reo', 'yin', 'cau', 'sen', 'Eva', 'abu', 'ago', 'emu', 'gio', 'psi', 'anu', 'apa', 'ril', 'fum', 'apo', 'ufo', 'gil', 'pul', 'far', 'heu', 'mir', 'out', 'ten', 'meo', 'axe', 'bos', 'uro', 'axi', 'aru', 'uga', 'ula', 'Gal', 'zio', 'adu', 'gau', 'sax', 'opo', 'hic', 'iva', 'Rem', 'ani', 'DDA', 'nit', 'dag', 'efi', 'ujo', 'rus', 'maz', 'uri', 'ren', 'nai', 'edu', 'iri', 'efe', 'oja', 'aal', 'tuo', 'ruz', 'nim', 'log', 'jau', 'bid', 'ppd', 'ozo', 'poa', 'ipo', 'joa', 'iba', 'upo', 'ovi', 'efo', 'udo', 'iei', 'uxi', 'ubi', 'oci', 'uja', 'rem', 'lev', 'bug', 'ici', 'ulu', 'uje', 'saa', 'udu', 'doa', 'poe', 'cha', 'mes', 'nao']
-securityWords = ['DECRYPTION','SECURITY','SAFETY','TECHNOLOGY','SYSTEM','PAPER','INFORMAT','PROCESS', 'DIGITAL', 'CURRENCY', 'DEVELOPING',                      'ENCRYPTION', 'ANALYSIS', 'RESULTS', 'SECURE', 'APPROACH']
+allPossibleKeys = ['sob','fel','vil','paz','mal','ver','ser','ego','ter','bem','vir','dar','bom','mas','rol','elo','era','tal','vis','ora','dia','luz','tez','com','ato','dor','eis','dou','hum','mim','ler','fiz','dom','pro','voo','sem','num','mau','uma','rua','sol','lei','que','ajo','lua','foi','rio','pau','nau','seu','ode','eco','voz','fim','fez','nem','ido','meu','sim','vez','aia','via','boi','rei','jus','pai','sub','asa','jaz','som','tem','uns','azo','ali','for','rir','ata','agi','por','lhe','boa','uso','toa','sal','amo','sua','ufa','van','pra','cor','cia','cal','ovo','nos','par','tom','kit','fio','ira','mar','mui','giz','loa','lar','neo','mor','uau','ais','rim','uno','ano','pus','top','noz','gay','pez','ele','mel','cem','pal','aio','CPF','mEq','pia','hem','cio','oba','foz','tio','ela','uni','ida','ave','gia','OTC','jia','imo','tua','duo','uva','dum','Don','teu','cru','sic','aro','vau','gol','dez','evo','DNA','ama','tia','CEP','exu','leu','das','deu','pio','aos','box','MEC','rap','dio','DIU','zen','nas','val','tai','oco','gaz','bio','dei','ala','mil','per','bis','gap','tri','ONU','rum','opa','lob','aba','lia','nua','sul','bar','lux','him','oca','eia','web','pua','ONG','ado','ria','sus','bel','boy','moa','DOS','oro','pan','ema','ipu','fax','sor','sai','til','PIB','VIP','pum','bip','vei','spa','iso','gel','qui','min','nom','mol','zoo','noa','aff','ero','ate','TPM','pop','ror','mds','hit','emo','ECT','vox','uru','CPI','HIV','fon','itu','ola','vlw','zum','CEO','aca','uai','lio','off','ova','are','coa','abc','eta','gir','MIF','iru','gim','bau','fot','TNT','upa','ono','CBD','ura','oma','xis','app','osa','sio','lis','nhu','hub','bei','CDF','hot','ADP','LSD','ulo','pub','nha','mua','raz','feo','AVC','chi','mia','var','ECG','PVC','IPI','dry','ADN','FSA','set','ati','Rui','DST','obi','del','odo','STJ','net','OMS','rer','bit','mio','gnu','ram','ume','idi','IDH','tau','ara','rau','SOS','uca','HPV','pru','UTI','job','sta','DVD','rpm','ISS','ose','aga','ade','ATP','dal','gag','avo','TOC','ava','bul','fog','PET','www','ota','ilu','afe','rep','sir','omo','MMC','elu','qid','ogo','eva','STF','reo','yin','hip','fox','bru','han','sen','adi','uge','GHz','cau','Eva','abu','ago','emu','psi','gio','anu','BCG','apa','fum','ril','apo','heu','gil','ufo','pul','far','mir','out','ten','CTI','hia','meo','AMB','axe','LDL','bos','uro','axi','aru','HDL','TCU','uga','ula','ppm','Gal','zio','adu','gau','sax','opo','hic','iva','GLP','Rem','ani','DDA','dag','nit','efi','ujo','rus','maz','ren','uri','edu','nai','iza','CBF','IOF','erg','TSE','efe','iri','KGB','csi','oja','tuo','aal','ruz','nim','log','B2C','jau','bid','ppd','DEM','ozo','poa','ipo','joa','B2B','iba','upo','ovi','Ohm','COO','ohm','efo','udo','iei','EEG','uxi','ska','ubi','vhs','oci','uja','rem','bug','lev','ici','ulu','PSL','uje','PSD','saa','uci','LCD','udu','RAM','PMB','PRB','ips','PRP','PPL','PDT','MDB','PCO','PSC','PHS','PTC','PSB','PCB','PMN','PTB','TBT','GPS','duz','lhe','los','mae','mis','nus','ore','pie','pue','reu','soe','tos','tvs','use','voe','vai','zoa','zoe','zua']
+securityWords = ['DECRYPTION','SECURITY','SAFETY','TECHNOLOGY','SYSTEM','PAPER','INFORMAT','PROCESS', 'DIGITAL', 'CURRENCY', 'DEVELOPING','ENCRYPTION', 'ANALYSIS', 'RESULTS', 'SECURE', 'APPROACH']
 commonWords = ['THIS','OTHER','THE', 'BOTH']
 
 
-receivedCipher = ciphered8
+receivedCipher = ciphered1
 
-# FIRST TASK, TRANSLATE AND STORE DECYPHERS
+# TRANSLATE AND STORE DECYPHERS
 i = 0
 deciphered = []
 while i < len(extendedPossibleKeys):
     deciphered.append(Vigenere(extendedPossibleKeys[i]).decipher(receivedCipher))
     i += 1
 
-# SECOND TASK, SEARCHING AND PRINTING DECIPHERS WITH SECURITY ENGLISH WORDS
+# SEARCHING AND PRINTING DECIPHERS WITH SECURITY ENGLISH WORDS
 j = 0
 thisIsCorrect = None
 while j < len(deciphered):
@@ -281,208 +282,9 @@ while j < len(deciphered):
     j += 1
 
 if thisIsCorrect != None:
+    formatString(thisIsCorrect)
 
-    # THIRD TASK, IF CORRECT MATCH IS FOUND, LOWER ALL CASES AND ADDING SPACE AND SPECIAL CHARACTERS ON CORRECT DECHIPERED 
-    dicio = list(thisIsCorrect.lower())
-    dicio = { i : dicio[i] for i in range(0, len(dicio) ) }
-
-    def addSignals(index, char):
-        afterIndex = { i+1 : dicio[i] for i in range(i, len(dicio) ) }
-        dicio.update({i : char})
-        dicio.update(afterIndex)
-        return dicio
-
-    i = 0
-    for c in receivedCipher:
-
-        if i == 0:
-            dicio.update({i : dicio.get(i).upper()})
-                
-        if c == " ":
-            addSignals(i, " ")
-                
-        if c == ".":
-            addSignals(i, ".")
-            if dicio.get(i+1) != None:
-                dicio.update({i+1 : dicio.get(i+1).upper()})
-                        
-        if c == ",":
-            addSignals(i, ",")
-                                
-        if c == "!":
-            addSignals(i, "!")  
-
-        if c == "?":
-            addSignals(i, "?")  
-
-        if c == "@":
-            addSignals(i, "@")   
-
-        if c == "#":
-            addSignals(i, "#")  
-
-        if c == "$":
-            addSignals(i, "$")   
-
-        if c == "%":
-            addSignals(i, "%")  
-            
-        if c == "&":
-            addSignals(i, "&")  
-
-        if c == "*":
-            addSignals(i, "*")   
-
-        if c == "-":
-            addSignals(i, "-")  
-            
-        if c == "+":
-            addSignals(i, "+") 
-            
-        if c == "_":
-            addSignals(i, "_")  
-            
-        if c == "+":
-            addSignals(i, "+") 
-
-        if c == "[":
-            addSignals(i, "[")
-                
-        if c == "(":
-            addSignals(i, "(")
-                
-        if c == ")":
-            addSignals(i, ")")
-                        
-        if c == "[":
-            addSignals(i, "[")
-                
-        if c == "]":
-            addSignals(i, "]")
-                        
-        if c == "{":
-            addSignals(i, "{")
-                
-        if c == "}":
-            addSignals(i, "}")
-                        
-        if (c == "/"):
-            addSignals(i, "/")
-                                
-        if (c == "\\"):
-            addSignals(i, "\\")
-                
-        if c == "'":
-            addSignals(i, "'")
-                                            
-        if c == "’":
-            addSignals(i, "’")
-                
-        if c == "“":
-            addSignals(i, "“")
-        
-        if c == "”":
-            addSignals(i, "”")
-                
-        if c == "9":
-            addSignals(i, "9")
-                        
-        if c == "8":
-            addSignals(i, "8")
-                        
-        if c == "7":
-            addSignals(i, "7")
-                        
-        if c == "6":
-            addSignals(i, "6")
-                        
-        if c == "5":
-            addSignals(i, "5")
-                        
-        if c == "4":
-            addSignals(i, "4")
-                        
-        if c == "3":
-            addSignals(i, "3")
-                        
-        if c == "2":
-            addSignals(i, "2")
-                        
-        if c == "1":
-            addSignals(i, "1")
-
-        if c == "0":
-            addSignals(i, "0")
-                        
-        if c == "ç":
-            addSignals(i, "ç")
-                                
-        if c == "ã":
-            addSignals(i, "ã")
-                                        
-        if c == "á":
-            addSignals(i, "á")
-                                    
-        if c == "à":
-            addSignals(i, "à")
-                                    
-        if c == "ó":
-            addSignals(i, "ó")
-                                    
-        if c == "à":
-            addSignals(i, "à")
-                                    
-        if c == "õ":
-            addSignals(i, "õ")
-                                    
-        if c == "é":
-            addSignals(i, "é")
-                                    
-        if c == "è":
-            addSignals(i, "è")
-                                    
-        # if c == "0":
-        #     addSignals(i, "0")
-                                    
-        # if c == "0":
-        #     addSignals(i, "0")
-                                    
-        # if c == "0":
-        #     addSignals(i, "0")
-                                    
-        # if c == "0":
-        #     addSignals(i, "0")
-                                    
-        # if c == "0":
-        #     addSignals(i, "0")
-                                    
-        # if c == "0":
-        #     addSignals(i, "0")
-                                    
-        # if c == "0":
-        #     addSignals(i, "0")
-        
-        i += 1
-
-    ponctuatedAnswer = "".join(dicio.values())
-
-    # FOURTH TASK, PRINTING AND WRITING IN EXTERNAL FILE THE CORRECT RESULT
-    print(ponctuatedAnswer, '\n') 
-    if (len(receivedCipher) - len(ponctuatedAnswer) != 0):
-            print("Comprimento da string encriptada: " , Fore.YELLOW, len(receivedCipher) , Style.RESET_ALL)
-            print("Comprimento da string final: " , Fore.YELLOW, len(ponctuatedAnswer) , Style.RESET_ALL)
-    else:
-        print("Comprimento da string encriptada: " , Fore.GREEN, len(receivedCipher) , Style.RESET_ALL)
-        print("Comprimento da string final: " , Fore.GREEN, len(ponctuatedAnswer) , Style.RESET_ALL)
-
-
-    # FIFTH TASK, CREATING EXTERNAL FILE
-    file = open("decipheredAnswer.txt","w")
-    file.write("Chave correta: " + keyFound + "\n")
-    file.write(ponctuatedAnswer)
-    file.close()
-
-# SIXTH TASK, SEARCHING AND PRINTING DECIPHERS WITH COMMON ENGLISH WORDS
+# SEARCHING AND PRINTING DECIPHERS WITH COMMON ENGLISH WORDS
 if thisIsCorrect == None:
     j = 0
     while j < len(deciphered):
@@ -503,10 +305,10 @@ if thisIsCorrect == None:
     keyFound =  input(" Insira a chave da descriptação correta : \n")   
     nonPonctuatedAnswer =  input(" Insira a descriptação para formatar para o envio: \n")
     if nonPonctuatedAnswer != '' and keyFound != '':
-        formatString()
+        formatString(nonPonctuatedAnswer)
 
 
-# SEVENTH TASK, IF NO CORRECT MATCH IS FOUND, PRINT ALL DECIPHERS
+# IF NO CORRECT MATCH IS FOUND, PRINT ALL DECIPHERS
 if thisIsCorrect == None:
     j = 0
     while j < len(deciphered):
@@ -520,4 +322,4 @@ if thisIsCorrect == None:
     keyFound =  input(" Insira a chave da descriptação correta : \n")   
     nonPonctuatedAnswer =  input(" Insira a descriptação para formatar para o envio: \n")
     if nonPonctuatedAnswer != '' and keyFound != '':
-        formatString()
+        formatString(nonPonctuatedAnswer)
