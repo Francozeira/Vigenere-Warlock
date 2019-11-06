@@ -252,7 +252,12 @@ allPossibleKeys = ['sob','fel','vil','paz','mal','ver','ser','ego','ter','bem','
 securityWords = ['DECRYPTION','SECURITY','SAFETY','TECHNOLOGY','SYSTEM','PAPER','INFORMAT','PROCESS', 'DIGITAL', 'CURRENCY', 'DEVELOPING','ENCRYPTION', 'ANALYSIS', 'RESULTS', 'SECURE', 'APPROACH']
 commonWords = ['THIS','OTHER','THE', 'BOTH']
 
-receivedCipher = ciphered1
+disputa1 = 'nb yonjualyr lbral pghgahhanl shq kopuyfk ca sh vfwewufahtds tdiosf nfx pzuaycay mbucrls, jzyew ieyuaatnlcbfm awyqli uspr mmrxoy shq fypwmfsll ahsglzsnvgh ndqnqm nnuvduody vf u ssmg shq wzsawvwhg euafye ah bjxrj nb vyiwfbh nuwcevuvds nunvncgayf, ahsglzsnvgh fwwhjcgq vruizwm n cyl xuplie. lbvk mgmxl am zwual nb chbo quwnuwl gzy owbnncbj uavuplcbfm bx caxieeugaia ksflyzk ofwlf slr s lvke bj u cjigwwgaia li gzyfw mlknrem fwwhjcgq. ca glqwl gg lrswu lbvkiobyplciw qr uuejcrv ihl u oavyaitjuczcpsf ewpvwq osmrv ia kypghqsll kihjwrk nusn ndfboyq mm gg xrnyygj n iorknvghascewzbj xnlu pgfywwgaia. kypghqds jw ofwx nf iadcaw khwmgaiafuvjy gg anlbrj uakqrjm sjiz 780 koobyplm jzi jglxwx zscads vf jbjnhyuy.lbr uiydyplyq vugs qrjy fmvwwwg li n kczhfr knnlcflcpsf gjynlgrfn, fhypauyds sjydmyaus nfx nfuyqmvk is eynfm. gzy zsca uiaufhkcbf xrjciwx sjiz lbvk mgmxl kbbom gzug ah twhrjuy mmrjm njy pghfaxrjyq li ow u cjigwwgaia xie lbr ahsglzsnvgh fqmgwgf kypmlvls vf ieyuaatnlcbfm.'
+disputa2 = 'k axqckkvçt ni bxnhbutçãy é lxpqgslt xi ibmlozokçãw wk khxnbnmgmqtvqwklx, svmooksltnm, wsaiyvblqesltnm x kcmovmskbniwo lx dwwka bxnhbutçõoa x niwya bxlbcxxxaáooql zikk i hbotxqskçãw x/yc bxlbfílny.'
+disputa3 = 'kvhgzbgb gqkwct bgbkqzykvu ympuqhga qqvhcqbu i kgizvp ch avczsf qbhwfoihkwb cucpo wva iumfu evq xfqdwfm hjmwt xstacpiz fihc acom ch bvgu ggvgkbwxm opl wv jsewaga oxiwnipnm hq izn whjmf uwqkiz pmhywfm usojsta wv asgug nqyg bvgas wasta ct ucub ch bvgu rq vcv mjgv vcds kv akvr vpov bvgas kvtqzacbwqv wu jskvu ewbukwqcg cvr wvqqvgeqcwaza lwubfkjivmr cvr vpsp bvgg rq vcv jscz wp uwpl hjm woxctbopks qn acqbviwpqbi i ggkitm spdwtwbombv bc rzcvmqv bvgqf umbuqhkds fihc nfqu dgwdnm opl actweqcwa qqls qv hjm'
+
+
+receivedCipher = disputa1
 
 # TRANSLATE AND STORE DECYPHERS
 i = 0
