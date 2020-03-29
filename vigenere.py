@@ -194,27 +194,6 @@ def formatString(stringToFormat):
                                     
         if c == "è":
             addSignals(i, "è")
-                                    
-        # if c == "0":
-        #     addSignals(i, "0")
-                                    
-        # if c == "0":
-        #     addSignals(i, "0")
-                                    
-        # if c == "0":
-        #     addSignals(i, "0")
-                                    
-        # if c == "0":
-        #     addSignals(i, "0")
-                                    
-        # if c == "0":
-        #     addSignals(i, "0")
-                                    
-        # if c == "0":
-        #     addSignals(i, "0")
-                                    
-        # if c == "0":
-        #     addSignals(i, "0")
         
         i += 1
 
@@ -263,7 +242,7 @@ disputa3 = 'kvhgzbgb gqkwct bgbkqzykvu ympuqhga qqvhcqbu i kgizvp ch avczsf qbhw
 disputa4 = 'Tas eosr bbcksalwnz isx cf gstpcrd-wnmsgkotxr igtokaamwog gylhefg il on Bbfhfmthihb Shqixhy’l zagrmtfk. Mvil inbjekge ht dbuimol vcnmsnmg agr mxrit ws ifogs th gofs tafeths mvam gekwonglr qofdrhails tas sxqukwtr cf mve ngek-gylhef-wnycrfotbcn kslthihbsawp. Bbfhfmthihb txqhgclhuy von ligxgt iorm cf mvil drhplxa’s lclnhihb, bnh ctbnhh shzvx wt bbtxurtzlr. Hhx wnycrfotbcn lscnfimm phzivwel aulh ougekje mve uoltbcx pemkexb tas hnaag onw hevvnhzozm ilguxg aucum wnycrfotbcn lscnfimm, ig qoghrtgt pwta qukfegh phzivm mhreeg, eqhrxaeem dxjomsd mc txqhgclhuivol jielhihbs. Mvil koky htr fhf pnfphge mve tbaemsbg oy hhx fejiiksd uocdurhinwg fhf tas tksamaegh oy hhx wnycrfotbcn lscnfimm, br aetbs ht igtokaamwog gevirbhy iclbqixg pkcphgae, palsd hb a lhrthezm oy dhxbofsnhzozwc tbaemsbg. Taws tdpkcavv abas mc gbje mc tas phzivwel o shqitz bhorwwnz, cf aimtbilh pxfsiscmwvxg, fhqulsd bb tas ulsrl’g phwnmg oy jixk agr ig cpicsbhihb th hhx qukfegh txqhgclhuiv aowsll'
 
 
-receivedCipher = disputa4
+receivedCipher = ciphered1
 
 # TRANSLATE AND STORE DECYPHERS
 i = 0
@@ -316,7 +295,6 @@ if thisIsCorrect == None:
     nonPonctuatedAnswer =  input(" Insira a descriptação para formatar para o envio: \n")
     if nonPonctuatedAnswer != '' and keyFound != '':
         formatString(nonPonctuatedAnswer)
-
 
 # IF NO CORRECT MATCH IS FOUND, PRINT ALL DECIPHERS
 if thisIsCorrect == None:
