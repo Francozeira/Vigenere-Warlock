@@ -291,11 +291,6 @@ if thisIsCorrect == None:
             k += 1
         j += 1
 
-    keyFound =  input(" Insira a chave da descriptação correta : \n")   
-    nonPonctuatedAnswer =  input(" Insira a descriptação para formatar para o envio: \n")
-    if nonPonctuatedAnswer != '' and keyFound != '':
-        formatString(nonPonctuatedAnswer)
-
 # IF NO CORRECT MATCH IS FOUND, PRINT ALL DECIPHERS
 if thisIsCorrect == None:
     j = 0
